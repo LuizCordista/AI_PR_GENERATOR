@@ -23,7 +23,7 @@ def main():
             print(f'- {t}')
         return
 
-    load_dotenv()
+    load_dotenv(override=True)
 
     if args.commit:
         diff = git_manager.get_commit_diff()
