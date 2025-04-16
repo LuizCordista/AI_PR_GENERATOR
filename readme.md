@@ -1,6 +1,6 @@
 # PR Generator
 
-PR Generator is a CLI tool that automatically generates Pull Request messages using AI, based on your code changes (git diff).
+PR Generator is a CLI tool that automatically generates Pull Request messages and conventional commit messages using AI, based on your code changes (git diff).
 
 ## Requirements
 
