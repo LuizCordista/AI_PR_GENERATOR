@@ -9,7 +9,7 @@ If a new component or method is created. explains how to implement and use the m
 
 ## Tasks & References
 
-Link to the Jira task: [JIra-taks-id]: jira-taks-url
+Link to the task: task_url 
 
 ## Results & Evidence
 

@@ -37,4 +37,4 @@ Please structure your review as follows:
 7. **Questions and Clarifications**
 8. **Overall Recommendation** (Approve / Request Changes / Comment)
 
-Please be specific in your feedback, referencing line numbers or code snippets where appropriate. Your review should be thorough, constructive, and aimed at improving the overall quality of the code. Return that only in PORTUGUESE.
+Please be specific in your feedback, referencing line numbers or code snippets where appropriate. Your review should be thorough, constructive, and aimed at improving the overall quality of the code.

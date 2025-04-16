@@ -1,46 +1,46 @@
-# Gerador de Mensagem de Commit Convencional
+# Conventional Commit Message Generator
 
-Este script analisa um git diff e gera uma mensagem de commit convencional apropriada.
+This script analyzes a git diff and generates an appropriate conventional commit message.
 
-## Entrada
+## Input
 
-Cole o git diff abaixo:
+Paste the git diff below:
 
 {{diff}}
 
-## Instruções
+## Instructions
 
-1. Analise o diff fornecido.
-2. Determine o tipo de alteração (feat, fix, docs, style, refactor, perf, test, chore).
-3. Identifique o escopo da alteração, se aplicável.
-4. Crie uma descrição curta e significativa da alteração.
-5. Se necessário, adicione um corpo mais detalhado à mensagem do commit.
-6. Se houver quebras de mudanças, adicione um rodapé com os detalhes.
+1. Analyze the provided diff.
+2. Determine the type of change (feat, fix, docs, style, refactor, perf, test, chore).
+3. Identify the scope of the change, if applicable.
+4. Create a short and meaningful description of the change.
+5. If necessary, add a more detailed body to the commit message.
+6. If there are breaking changes, add a footer with the details.
 
-## Saída
+## Output
 
-Com base na análise do diff, aqui está a mensagem de commit convencional sugerida:
+Based on the diff analysis, here is the suggested conventional commit message:
 
-<tipo>(<escopo>): <descrição>
+<type>(<scope>): <description>
 
-[corpo opcional]
+[optional body]
 
-[rodapé(s) opcional(is)]
+[optional footer(s)]
 
 
-### Explicação
+### Explanation
 
-- **Tipo**: O tipo de alteração (feat, fix, docs, etc.)
-- **Escopo**: A parte do código afetada (opcional)
-- **Descrição**: Breve descrição da alteração
-- **Corpo**: Detalhes adicionais, se necessário
-- **Rodapé**: Informações sobre quebras de mudanças, se houver
+- **Type**: The type of change (feat, fix, docs, etc.)
+- **Scope**: The part of the code affected (optional)
+- **Description**: Brief description of the change
+- **Body**: Additional details, if necessary
+- **Footer**: Information about breaking changes, if any
 
-## Observações Adicionais
+## Additional Notes
 
-- A linha de assunto (primeira linha) não deve ter mais de 50 caracteres
-- O corpo deve ser quebrado em 72 caracteres
-- Use o tempo verbal no presente ("adiciona feature" não "adicionou feature")
-- O corpo deve explicar o "o quê" e o "por quê", não o "como"
+- The subject line (first line) should not exceed 50 characters
+- The body should be wrapped at 72 characters
+- Use present tense ("add feature" not "added feature")
+- The body should explain the "what" and "why", not the "how"
 
-Sempre retorne em ingles
+Always return in English
