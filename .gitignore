@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+dist/
+build/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.pth
+*.egg
+
+# PyInstaller
+#  Usually these files are written into a dist/ directory, but be sure to ignore them if they're lying around
+*.manifest
+*.spec
+
+# Compiled source #
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.dat
+
+# OS generated files #
+.DS_Store
+Thumbs.db
+
+# Env
+.env
