@@ -1,112 +1,120 @@
 # PR Generator
 
-PR Generator é uma ferramenta CLI que automaticamente gera mensagens de Pull Request usando IA, baseando-se nas mudanças do seu código (git diff).
+PR Generator is a CLI tool that automatically generates Pull Request messages using AI, based on your code changes (git diff).
 
-## Requisitos
+## Requirements
 
-- Python 3.12 ou superior
+- Python 3.12 or higher
 - Git
-- `pipx` (para instalação global isolada)
+- `pipx` (for global isolated installation)
 
-## Instalação
+## Installation
 
-Recomendamos usar `pipx` para instalar a ferramenta globalmente em um ambiente isolado.
+We recommend using `pipx` to install the tool globally in an isolated environment.
 
-1.  **Instale `pipx`** (se ainda não tiver):
+1. **Install `pipx`** (if you don't have it yet):
     ```bash
     python -m pip install --user pipx
     python -m pipx ensurepath
     ```
-    *Nota: Pode ser necessário reiniciar o terminal após `ensurepath`.*
+    *Note: You may need to restart your terminal after running `ensurepath`.*
 
-2.  **Clone o repositório:**
+2. **Clone the repository:**
     ```bash
-    git clone [url-do-repositorio]
+    git clone [repository-url]
     cd Pr_generator
     ```
 
-3.  **Instale usando `pipx`:**
+3. **Install using `pipx`:**
     ```bash
     pipx install .
     ```
-    Isso tornará o comando `pr-generator` disponível globalmente.
+    This will make the `pr-generator` command available globally.
 
-*(Opcional: Para desenvolvimento, siga os passos de ambiente virtual abaixo)*
+*(Optional: For development, follow the virtual environment steps below)*
 
-### Instalação para Desenvolvimento
+### Development Installation
 
-Se você pretende contribuir com o projeto:
+If you want to contribute to the project:
 
-1.  Clone o repositório (se ainda não o fez).
-2.  Crie um ambiente virtual e ative-o:
+1. Clone the repository (if you haven't already).
+2. Create and activate a virtual environment:
     ```bash
     python -m venv venv
     source venv/bin/activate  # Linux/MacOS
-    # ou
+    # or
     venv\Scripts\activate     # Windows
     ```
-3.  Instale o pacote em modo de desenvolvimento:
+3. Install the package in development mode:
     ```bash
-    pip install -e .[dev] # Instala dependências de desenvolvimento também (se houver)
-    # ou apenas
+    pip install -e .[dev] # Installs dev dependencies if any
+    # or just
     pip install -e .
     ```
 
-## Configuração
+## Configuration
 
-Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+Create a `.env` file at the root of the project with the following variables:
 
 ```env
-LLM_API_URL="url-da-api"
-LLM_API_KEY="sua-api-key"
-LLM_MODEL="nome-do-modelo" # Exemplo: gpt-3.5-turbo
-# Opcional: LLM_HEADERS={"Custom-Header": "valor"}
+LLM_API_URL="your-api-url"
+LLM_API_KEY="your-api-key"
+LLM_MODEL="model-name" # Example: gpt-3.5-turbo
+# Optional: LLM_HEADERS={"Custom-Header": "value"}
 ```
 
-## Uso
+## Usage
 
-O PR Generator pode ser usado diretamente pela linha de comando após a instalação:
+PR Generator can be used directly from the command line after installation:
 
 ```bash
-pr-generator [--base BRANCH] [--template TEMPLATE] [--list-templates]
+pr-generator [--base BRANCH] [--template TEMPLATE] [--list-templates] [--commit]
 ```
 
-Opções:
-- `--base` ou `-b`: Branch base para comparação (default: 'main')
-- `--template` ou `-t`: Template .md a ser usado (default: 'default.md')
-- `--list-templates`: Lista os templates disponíveis e sai
+Options:
+- `--base` or `-b`: Base branch for comparison (default: 'main')
+- `--template` or `-t`: .md template to use (default: 'default.md')
+- `--list-templates`: List available templates and exit
+- `--commit`: Automatically generates a conventional commit message instead of a Pull Request message
 
-Exemplo:
+Examples:
+
+Generate a Pull Request message:
 ```bash
-pr-generator --base develop --template meu_template.md
+pr-generator --base develop --template my_template.md
 ```
 
-Para listar os templates disponíveis:
+Generate a conventional commit message:
+```bash
+pr-generator --commit
+```
+
+List available templates:
 ```bash
 pr-generator --list-templates
 ```
 
-### Como adicionar novos templates
+### How to add new templates
 
-1. Crie um arquivo `.md` com o formato desejado na pasta `pr_generator/templates/`.
-2. Use o nome do arquivo com a opção `--template` ao rodar o comando.
-   - Exemplo: `pr-generator --template meu_template.md`
+1. Create a `.md` file with your desired format in the `pr_generator/templates/` folder.
+2. Use the file name with the `--template` option when running the command.
+   - Example: `pr-generator --template my_template.md`
 
-O template padrão é o `default.md`. Você pode criar quantos templates quiser, basta adicioná-los na pasta `pr_generator/templates/`.
+The default template is `default.md`. You can create as many templates as you want, just add them to the `pr_generator/templates/` folder.
 
-O comando irá:
-1. Recuperar o diff entre sua branch atual e a branch base
-2. Gerar uma mensagem de PR formatada usando IA e o template escolhido
-3. Exibir a mensagem gerada no terminal
+The command will:
+1. Retrieve the diff between your current branch and the base branch
+2. Generate a formatted PR message using AI and the selected template
+3. Display the generated message in the terminal
 
-A mensagem gerada seguirá o formato do template selecionado.
+The generated message will follow the format of the selected template.
 
-## Desenvolvimento
+## Contributing
 
-Para contribuir com o projeto:
+To contribute to the project:
 
-1. Fork o repositório
-2. Crie sua feature branch (`git checkout -b feat/MinhaFeature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feat/MinhaFeature`)
-5. Abra um Pull Request
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feat/MyFeature`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feat/MyFeature`)
+5. Open a Pull Request
